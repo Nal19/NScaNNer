@@ -26,67 +26,58 @@
    ```bash
    git clone https://github.com/Nal19/NScanNer.git
    cd NScanNer
-Install Dependencies:
-bash
+2. **Install Dependencies**:
+   pip install python-nmap nvdlib
+3. **Ensure Nmap is Installed**:
+   On Windows: Install Nmap from the official website and add it to your system PATH.
+   On Linux/Mac: Install via package manager (e.g., sudo apt install nmap for Ubuntu).
 
-Copy
-pip install python-nmap nvdlib
-Ensure Nmap is Installed:
-On Windows: Install Nmap from the official website and add it to your system PATH.
-On Linux/Mac: Install via package manager (e.g., sudo apt install nmap for Ubuntu).
-🖥️ Usage
-Run the scanner:
-bash
+## 🖥️ Usage
+1. **Run the scanner**:
+   python nscanner.py
+2. **Follow the CLI prompts**:
+   Enter a target IP address (e.g., 192.168.1.1).
+   Specify a port range (e.g., 1-1000) or leave blank for default.
+3. **View the results**:
+   Port scan results display open ports, services, and OS details.
+   Vulnerability scan results list CVEs with severity and descriptions.
+   **Example**:
+   $ python nscanner.py
+   Enter target IP: 192.168.1.1
+   Enter port range (e.g., 1-1000): 1-100
+   Scan type (TCP/UDP): TCP
+   [2025-05-10 10:15:23] Scanning 192.168.1.1...
+   [+] Open Port: 80 (http)
+   [+] CVE-2023-12345: Medium severity (Apache 2.4.x vulnerability)
 
-Copy
-python nscanner.py
-Follow the CLI prompts:
-Enter a target IP address (e.g., 192.168.1.1).
-Specify a port range (e.g., 1-1000) or leave blank for default.
-Choose a scan type (e.g., TCP, UDP).
-View the results:
-Port scan results display open ports, services, and OS details.
-Vulnerability scan results list CVEs with severity and descriptions.
-Example:
+## 📝 Example Output
+   NScanNer Report - 2025-05-10 10:15:23
+   Target: 192.168.1.1
+   Port Range: 1-100
+   Scan Type: TCP
+   [+] Port 80: http (Apache/2.4.29)
+   [+] Port 443: https
+   Vulnerabilities:
+   - CVE-2023-12345: Medium (CVSS: 5.3) - Apache misconfiguration
 
-bash
+## 🛡️ Limitations
+   Requires root/admin privileges for certain nmap scans (e.g., OS detection).
+   NVD queries depend on internet connectivity and API availability.
+   Not intended for unauthorized scanning—always obtain permission before scanning networks.
 
-Copy
-$ python nscanner.py
-Enter target IP: 192.168.1.1
-Enter port range (e.g., 1-1000): 1-100
-Scan type (TCP/UDP): TCP
-[2025-05-10 10:15:23] Scanning 192.168.1.1...
-[+] Open Port: 80 (http)
-[+] CVE-2023-12345: Medium severity (Apache 2.4.x vulnerability)
-📝 Example Output
-text
+## 🔮 Future Improvements
+   Add GUI support for a more accessible interface.
+   Implement multithreading for faster scans.
+   Integrate additional vulnerability databases (e.g., VulnDB).
+   Export reports in JSON or CSV formats.
 
-Copy
-NScanNer Report - 2025-05-10 10:15:23
-Target: 192.168.1.1
-Port Range: 1-100
-Scan Type: TCP
-[+] Port 80: http (Apache/2.4.29)
-[+] Port 443: https
-Vulnerabilities:
-- CVE-2023-12345: Medium (CVSS: 5.3) - Apache misconfiguration
-🛡️ Limitations
-Requires root/admin privileges for certain nmap scans (e.g., OS detection).
-NVD queries depend on internet connectivity and API availability.
-Not intended for unauthorized scanning—always obtain permission before scanning networks.
-🔮 Future Improvements
-Add GUI support for a more accessible interface.
-Implement multithreading for faster scans.
-Integrate additional vulnerability databases (e.g., VulnDB).
-Export reports in JSON or CSV formats.
-🤝 Contributing
-Contributions are welcome! Feel free to:
+## 🤝 Contributing
+   Contributions are welcome! Feel free to:
+      Submit bug reports or feature requests via Issues.
+      Fork the repo, make improvements, and submit a pull request.
+      Suggested enhancements: better error handling, new scan types, or report formats.
 
-Submit bug reports or feature requests via Issues.
-Fork the repo, make improvements, and submit a pull request.
-Suggested enhancements: better error handling, new scan types, or report formats.
-📫 Contact
-Author: Nal (@Nal19)
-Email: nalthehcaker@gmail.com
-GitHub: Nal19
+## 📫 Contact
+   Author: Nal (@Nal19)
+   Email: nalthehcaker@gmail.com
+   GitHub: Nal19
